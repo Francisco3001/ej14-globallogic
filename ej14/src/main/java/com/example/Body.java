@@ -17,12 +17,21 @@ public class Body {
     public String imprimirse(){
         StringBuilder cadena = new StringBuilder();
         
-        cadena.append("<body> ");
+        cadena.append("<body>\n");
         
         for (Html html : tags) {
             cadena.append(html.imprimirse());
+            cadena.append("\n");
         }
         cadena.append("</body>");
         return cadena.toString();
+    }
+
+    public List<Html> getTags() {
+        return tags;
+    }
+
+    public void add(Html tags) {
+        this.tags.add(tags);
     }
 }
